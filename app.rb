@@ -4,9 +4,17 @@ require 'sinatra/base'
 class Battle < Sinatra::Base
   # set :sessions,  true
 
-  get '/' do
-   "Testing infrastructure working!"
- end
+   get '/' do
+     erb :form
+   end
+
+   post '/names' do
+      @player1 = params[:player1]
+      @player2 = params[:player2]
+      erb :play
+   end
+
+
 
 
  # start the server if ruby file executed directly
