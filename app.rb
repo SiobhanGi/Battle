@@ -30,7 +30,7 @@ class Battle < Sinatra::Base
 
   post '/attack' do
     session[:attack_message] = "Successful Attack"
-    $game.attack_on($game.player2)
+    $game.attack
     $game.switch_turn
     # $player1.attack($player2)
     redirect :play

@@ -7,6 +7,12 @@
 
 <h3>Its <%= $game.current_player.name %>'s turn to attack.</h3>
 
+<% if ($game.current_player.name == @player1.name) %>
 <form action="/attack" method="post">
-  <button type="submit" name="attack">attack</button>
+  <button type="submit" name="p1_attack">p1_attack</button>
 </form>
+<% else %>
+<form action="/attack" method="post">
+  <button type="submit" name="p2_attack">p2_attack</button>
+</form>
+<% end %>

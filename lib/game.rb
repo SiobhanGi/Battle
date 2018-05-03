@@ -8,8 +8,8 @@ class Game
     @players = [@player1, @player2]
   end
 
-  def attack_on(player)
-    player.hurt
+  def attack
+    other_player.hurt
   end
 
   def switch_turn
@@ -18,6 +18,12 @@ class Game
 
   def current_player
     @players.first
+  end
+
+  private
+  
+  def other_player
+    @players.last
   end
 
 end

@@ -22,8 +22,8 @@ RSpec.describe Game do
 
 
     it 'causes player to attack other player' do
-        game.attack_on(player1)
-        expect(player1).to have_received(:hurt)
+        game.attack
+        expect(player2).to have_received(:hurt)
     end
   end
 end
