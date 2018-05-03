@@ -17,4 +17,15 @@ RSpec.feature 'HP' do
     click_button('attack')
     expect(page.find('span#player2_hp').text).to eq 'HP 90'
   end
+
+  scenario "shows its player1's turn to attack" do
+    sign_in_and_play
+    expect(page).to have_content("Its Ellie's turn to attack.")
+  end
+
+  scenario "shows its player2's turn to attack" do
+    sign_in_and_play
+    click_button('attack')
+    expect(page).to have_content("Its Siobhan's turn to attack.")
+  end
 end

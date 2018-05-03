@@ -5,6 +5,8 @@
 
 <h3><%= @attack_message %></h3>
 
+<h3>Its <%= $game.current_player.name %>'s turn to attack.</h3>
+
 <form action="/attack" method="post">
   <button type="submit" name="attack">attack</button>
 </form>
