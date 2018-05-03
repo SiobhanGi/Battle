@@ -17,9 +17,15 @@ class Battle < Sinatra::Base
   end
 
   get '/play' do
+    @attack_message = session[:attack_message]
     @player1  = session[:player1]
     @player2 = session[:player2]
     erb :play
+  end
+
+  post '/play' do
+    session[:attack_message] = "Successful Attack"
+    redirect :play
   end
 
 

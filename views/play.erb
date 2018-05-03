@@ -2,3 +2,9 @@
 
 <h2><%= @player1 %>: HP 100</h2>
 <h2><%= @player2 %>: HP 100</h2>
+
+<h3><%= @attack_message %></h3>
+
+<form action="/play" method="post">
+  <button type="submit" name="attack">attack</button>
+</form>
