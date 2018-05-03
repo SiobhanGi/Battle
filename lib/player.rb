@@ -1,8 +1,20 @@
 class Player
-  attr_reader :name
+  attr_reader :name, :health
+  PAIN = 10
 
-  def initialize(name='anon')
+  HEALTH = 100
+
+  def initialize(name='anon', health = HEALTH)
     @name = name
+    @health = health
   end
-  
+
+  def attack(player)
+    player.hurt
+  end
+
+  def hurt
+    @health -= PAIN
+  end
+
 end
