@@ -16,11 +16,4 @@ RSpec.describe Player, :player do
       expect(player.health).to eq 100
     end
   end
-
-  describe '#attack' do
-
-    it 'reduces the health of player by the default increment' do
-      expect { player_anon.attack(player) }.to change{ player.health}.by -described_class::PAIN
-    end
-  end
 end
