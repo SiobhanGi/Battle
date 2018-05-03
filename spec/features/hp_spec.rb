@@ -35,4 +35,24 @@ RSpec.feature 'HP' do
     click_button('p2_attack')
     expect(page.find('span#player1_hp').text).to eq 'HP 90'
   end
+
+  scenario 'player 2 hp loses game when hp 0' do
+    sign_in_and_play
+    9.times {
+      click_button('p1_attack')
+      click_button('p2_attack')
+    }
+    click_button('p1_attack')
+    expect(page).to have_content("Siobhan you lose!")
+  end
+
+  scenario 'player 2 doesnt lose the game' do
+    sign_in_and_play
+    9.times {
+      click_button('p1_attack')
+      click_button('p2_attack')
+    }
+    expect(page).not_to have_content("you lose!")
+  end
+
 end

@@ -21,7 +21,7 @@ class Game
   end
 
   private
-  
+
   def other_player
     @players.last
   end
